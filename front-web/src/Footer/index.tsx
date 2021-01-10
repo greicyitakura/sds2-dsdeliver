@@ -13,10 +13,10 @@ function Footer() {
                 <a href="http://www.youtube.com/c/DevSuperior" target="_new">
                     <YoutubeIcon/>
                 </a>
-                <a href="http://www.linkedin.com/school/devsuperior/" target="_new">
+                <a href="https://www.linkedin.com/in/greicy-itakura/" target="_new">
                     <LinkedinIcon/>
                 </a>
-                <a href="http://www.instagram.com/devsuperior.ig/" target="_new">
+                <a href="https://www.instagram.com/grey_itakura/" target="_new">
                     <InstagramIcon/>
                 </a>
               
