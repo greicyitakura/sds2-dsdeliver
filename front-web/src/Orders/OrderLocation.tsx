@@ -9,10 +9,10 @@ const initialPosition ={
     lng: -46.5006724
 }
 
-type Place ={
+type Place = {
     label?: string;
     value?: string;
-    position:{
+    position: {
         lat: number;
         lng: number;
     };
@@ -65,7 +65,7 @@ function OrderLocation({ onChangeLocation}: Props) {
                 placeholder="Digite um endereço para entregar o pedido"
                 className="filter"
                 loadOptions={loadOptions}
-                onchange={(value: Place) => handleChangeSelect(value as Place)}
+                onChange={value => handleChangeSelect(value as Place)}
             />
             </div>
                       

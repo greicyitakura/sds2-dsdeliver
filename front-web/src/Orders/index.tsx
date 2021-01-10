@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { toast, Toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import StepsHeader from './StepsHeader';
 import ProductsList from './ProductsList';
 import { OrderLocationData, Product } from './types';
@@ -25,8 +25,10 @@ function Orders() {
     useEffect(() => {
         fetchProducts()
         .then(response => setProducts(response.data))
-        .catch(error => console.log(error))
-    }, []);
+        .catch(() => {
+          toast.warning('Erro ao enviar pedido');
+        })
+       }, []);
 
     const handleSelectProduct = (product: Product) => {
         const isAlreadySelected = checkIsSelected(selectedProducts, product);
@@ -45,8 +47,9 @@ function Orders() {
           products: productsIds
         }
       
-        saveOrder(payload).then(() => {
-          toast.error('Pedido enviado com sucesso!');
+        saveOrder(payload)
+        .then((response) => {
+          toast.error(`Pedido enviado com sucesso! Nº ${response.data.id}`);
           setSelectedProducts([]);
         })
           .catch(() => {
